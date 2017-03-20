@@ -20,20 +20,20 @@ public class Student {
         return iD;
     }
 
-    public boolean getTuitionPaid(){
+    public boolean isTuitionPaid(){
         return tuitionPaid;
     }
 
     //setters
-    public void setName(String newName) {
+    private void setName(String newName) {
         name = newName;
     }
 
-    public void setID(String newID) {
-        iD= newID;
+    private void setID(String newID) {
+        iD = newID;
     }
 
-    public void setTuitionPaid(boolean newTuitionPaid) {
+    private void setTuitionPaid(boolean newTuitionPaid) {
         tuitionPaid = newTuitionPaid;
 
     }
