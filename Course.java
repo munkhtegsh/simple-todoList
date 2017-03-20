@@ -41,7 +41,14 @@ public class Course {
             // ex) if 3 people enrolled, array index 0, 1, 2 is filled. Therefore next index is 3.
             roster[currentEnrollment++] = s; // After adding student, increase currentEnrollment by 1.
             isStudentAdded = true; // After adding student, boolean turns 'true'.
+        } else {
+            System.out.println("** Enrollment failed **");
+            if (!s.isTuitionPaid())
+                System.out.println(" └─ Sorry, unpaid tuition balance remain");
+            if (currentEnrollment >= maxEnrollment) {
+                System.out.println(" └─ Sorry, enrollment is full");
         }
+    }
         return isStudentAdded;
     }
 

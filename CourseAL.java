@@ -4,17 +4,16 @@ public class CourseAL {
 
     // Instance Data
     private String name;
-    private int maxEnrollment, currentEnrollment; // Added to count enrolled students
     private ArrayList<Student> roster;
+    private int minEnrollment, maxEnrollment, currentEnrollment; // Minimum enrollment will be inclusive
 
     // Class Constructor
-    public CourseAL (String initialName, int initialMaxEnrollment){
-        this.name = initialName;
-        this.maxEnrollment = initialMaxEnrollment;
+    public CourseAL (String courseNameInput, int MaxEnrollmentInput){
+        this.name = courseNameInput;
+        this.minEnrollment = 5;
+        this.maxEnrollment = MaxEnrollmentInput;
         this.currentEnrollment = 0;
-
-        // AL roster added by Chris. Using maxEnrollment
-        roster = new ArrayList<>(maxEnrollment);
+        this.roster = new ArrayList<>(maxEnrollment);
     }
 
     // Getter Methods
@@ -23,28 +22,46 @@ public class CourseAL {
 
     // Setter Methods
     public void setName(String newName) { this.name = newName; }
-    public void setMaxEnrollment(int newMaxEnrollment) {
-        if (newMaxEnrollment < 1){
-            System.out.print("Enrollment must be greater than 1 student!");
+    public void setMaxEnrollment(int MaxEnrollmentInput) {
+        if (MaxEnrollmentInput < this.minEnrollment){
+            System.out.print("Enrollment must be greater than " + this.minEnrollment + " student!");
         }
-        else if (newMaxEnrollment > maxEnrollment){
-            System.out.print("Enrollment cannot be greater than " + maxEnrollment + " students.");
+        else if (MaxEnrollmentInput > this.maxEnrollment){
+            System.out.print("Enrollment cannot be greater than " + this.maxEnrollment + " students.");
         }
         else{
-            maxEnrollment = newMaxEnrollment;
+            this.maxEnrollment = MaxEnrollmentInput;
         }
     }
 
-    // addStudent method, receives student object and inserts to roster (= student array).
+    // addStudent method, receives student object and inserts to roster.
     public boolean addStudent(Student s) {
         boolean isStudentAdded = false;
         if (s.isTuitionPaid() && (currentEnrollment < maxEnrollment)) {
             roster.add(s);
             currentEnrollment++;
             isStudentAdded = true; // After adding student, boolean turns 'true'.
+        } else {
+            System.out.println("** Enrollment failed **");
+            if (!s.isTuitionPaid())
+                System.out.println(" └─ Sorry, unpaid tuition balance remain");
+            if (currentEnrollment >= maxEnrollment) {
+                System.out.println(" └─ Sorry, enrollment is full");
+            }
         }
         return isStudentAdded;
     }
+
+    /*
+        public boolean dropStudent(Student s)
+            if the student is currently in the roster,
+            remove them from the roster and return true return false otherwise
+        public void printRoster()
+            print how many students are enrolled in the course
+            also print the list of each student on a single line
+            (use good object-oriented principles to access a text representation of each student!)
+            print an appropriate message if there are no students yet enrolled
+     */
 
     //String method
     public String toString(){
