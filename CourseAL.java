@@ -13,7 +13,7 @@ public class CourseAL {
         this.minEnrollment = 5;
         this.maxEnrollment = MaxEnrollmentInput;
         this.currentEnrollment = 0;
-        this.roster = new ArrayList<>(maxEnrollment);
+        this.roster = new ArrayList<Student>(maxEnrollment);
     }
 
     // Getter Methods
@@ -33,6 +33,8 @@ public class CourseAL {
             this.maxEnrollment = MaxEnrollmentInput;
         }
     }
+
+
 
     // addStudent method, receives student object and inserts to roster.
     public boolean addStudent(Student s) {
@@ -62,6 +64,36 @@ public class CourseAL {
             (use good object-oriented principles to access a text representation of each student!)
             print an appropriate message if there are no students yet enrolled
      */
+     // dropStudent method
+         public boolean dropStudent(Student s){
+           for(int i=0; i<currentEnrollment; i++){
+     // verify if the student is ni the roster by checking its name and id
+             if(s.getName().equals(this.roster[i].getName()) && s.getID().equals(this.roster[i].getID())){
+               // rotate the array in case any empty slot after dropping the student
+               this.roster.remove(i);
+               }
+               this.currentEnrollment--;
+               return true;//after dropping and rotating the array return true break the outter for loop
+             }
+
+           }
+
+           return false;
+
+         }
+
+         public void printRoster(){
+
+             // print out the result and specify a case when no students enrolled
+             if(this.currentEnrollment == 0){System.out.println("There are no students enrolled in the class now.");}
+             else{
+               System.out.printf("Enrollment:%d\n",this.currentEnrollment);
+               for(int i=0;i<currentEnrollment;i++){
+                 System.out.println(this.roster[i].getName() +"  ("+ this.roster[i].getID() +")");
+               }
+             }
+         }
+
 
     //String method
     public String toString(){
