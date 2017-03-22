@@ -64,30 +64,7 @@ public class CourseAL {
             (use good object-oriented principles to access a text representation of each student!)
             print an appropriate message if there are no students yet enrolled
      */
-     // dropStudent method
-         public boolean dropStudent(Student s){
-           if(this.roster.contains(s)){
-             currentEnrollment--;
-             this.roster.remove(s);
-             return true;
-           }
-           return false;
-
-         }
-
-         public void printRoster(){
-
-             // print out the result and specify a case when no students enrolled
-             if(this.currentEnrollment == 0){System.out.println("--No students enrolled.--
-");}
-             else{
-               System.out.printf("Enrollment:%d\n",this.currentEnrollment);
-               for(int i=0;i<currentEnrollment;i++){
-                 System.out.println(this.roster[i].getName() +"  ("+ this.roster[i].getID() +")");
-               }
-             }
-         }
-
+    
 
     //String method
     public String toString(){
