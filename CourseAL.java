@@ -66,18 +66,11 @@ public class CourseAL {
      */
      // dropStudent method
          public boolean dropStudent(Student s){
-           for(int i=0; i<currentEnrollment; i++){
-     // verify if the student is ni the roster by checking its name and id
-             if(s.getName().equals(this.roster[i].getName()) && s.getID().equals(this.roster[i].getID())){
-               // rotate the array in case any empty slot after dropping the student
-               this.roster.remove(i);
-               }
-               this.currentEnrollment--;
-               return true;//after dropping and rotating the array return true break the outter for loop
-             }
-
+           if(this.roster.contains(s)){
+             currentEnrollment--;
+             this.roster.remove(s);
+             return true;
            }
-
            return false;
 
          }
@@ -85,7 +78,8 @@ public class CourseAL {
          public void printRoster(){
 
              // print out the result and specify a case when no students enrolled
-             if(this.currentEnrollment == 0){System.out.println("There are no students enrolled in the class now.");}
+             if(this.currentEnrollment == 0){System.out.println("--No students enrolled.--
+");}
              else{
                System.out.printf("Enrollment:%d\n",this.currentEnrollment);
                for(int i=0;i<currentEnrollment;i++){
