@@ -8,7 +8,7 @@ public class Tester {
         physics.addStudent(eric);
         physics.addStudent(sam);
         physics.dropStudent(eric);
-      
+
         physics.printRoster();
 
 

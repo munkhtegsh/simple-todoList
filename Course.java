@@ -90,9 +90,9 @@ public class Course {
     public void printRoster(){
 
         // print out the result and specify a case when no students enrolled
-        if(this.currentEnrollment == 0){System.out.println("--No students enrolled.--
-");}
-        else{
+        if(this.currentEnrollment == 0){
+          System.out.println("No students enrolled.");
+        }else{
           System.out.printf("Enrollment:%d\n",this.currentEnrollment);
           for(int i=0;i<currentEnrollment;i++){
             System.out.println(this.roster[i].getName() +"  ("+ this.roster[i].getID() +")");
