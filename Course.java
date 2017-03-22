@@ -91,7 +91,7 @@ public class Course {
 
         // print out the result and specify a case when no students enrolled
         if(this.currentEnrollment == 0){
-          System.out.println("No students enrolled.");
+          System.out.println("--No students enrolled.--");
         }else{
           System.out.printf("Enrollment:%d\n",this.currentEnrollment);
           for(int i=0;i<currentEnrollment;i++){
