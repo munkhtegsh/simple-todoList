@@ -1,13 +1,13 @@
 public class Student {
 
     private String name;
-    private String iD;
+    private String studentID;//iD is not a good idea, since ID has a meaning
     private boolean tuitionPaid;
 
     //constructor
     public Student (String initialName, String initialID, boolean initialTuitionPaid){
         name = initialName;
-        iD = initialID;
+        studentID = initialID;
         tuitionPaid = initialTuitionPaid;
     }
 
@@ -17,7 +17,7 @@ public class Student {
     }
 
     public String getID(){
-        return iD;
+        return studentID;
     }
 
     public boolean isTuitionPaid(){
@@ -30,7 +30,7 @@ public class Student {
     }
 
     private void setID(String newID) {
-        iD = newID;
+        studentID = newID;
     }
 
     private void setTuitionPaid(boolean newTuitionPaid) {
@@ -40,6 +40,6 @@ public class Student {
 
     //String method
     public String toString(){
-        return "Name: " + name + "\n" + "Student ID: " + iD + "\n" + "Tuition Paid: " + tuitionPaid;
+        return "Name: " + name + "\n" + "Student ID: " + studentID + "\n" + "Tuition Paid: " + tuitionPaid;
     }
 }

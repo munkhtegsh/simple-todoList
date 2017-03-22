@@ -1,10 +1,13 @@
 public class Tester {
     public static void main(String[] args) {
-        Course Physics = new Course("Physics", 0);
-        Student Mark = new Student("Mark Mares", "A146", false);
-        Physics.addStudent(Mark);
+        Course physics = new Course("Physics", 10);
+        Student mark = new Student("Mark Mares", "A146", true);
 
-        System.out.println(Physics);
+        physics.addStudent(mark);
+      
+
+        physics.dropStudent(eric);
+        physics.printRoster();
     }
 
 }
