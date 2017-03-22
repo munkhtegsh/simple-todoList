@@ -1,3 +1,4 @@
+import java.text.MessageFormat;
 public class Student {
 
     private String name;
@@ -40,6 +41,6 @@ public class Student {
 
     //String method
     public String toString(){
-        return "Name: " + name + "\n" + "Student ID: " + studentID + "\n" + "Tuition Paid: " + tuitionPaid;
+        return MessageFormat.format("({0}) {1}", studentID, name);
     }
 }

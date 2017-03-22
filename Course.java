@@ -54,7 +54,7 @@ public class Course {
     // addStudent method, receives student object and inserts to roster (= student array).
     public boolean addStudent(Student s) {
         boolean isStudentAdded = false;
-        if (s.isTuitionPaid() && (currentEnrollment <= maxEnrollment)) {
+        if (s.isTuitionPaid() && (currentEnrollment < maxEnrollment)) {
             // 'currentEnrollment' is always the next array index to be used.
             // ex) if 3 people enrolled, array index 0, 1, 2 is filled. Therefore next index is 3.
             roster[currentEnrollment++] = s; // After adding student, increase currentEnrollment by 1.
@@ -66,6 +66,8 @@ public class Course {
             if (currentEnrollment >= maxEnrollment) {
                 System.out.println("     └─ Sorry, enrollment is full");
             }
+            // Space is added after error message regardless of reason.
+            System.out.println();
         }
         return isStudentAdded;
     }
@@ -91,13 +93,15 @@ public class Course {
 
         // print out the result and specify a case when no students enrolled
         if(this.currentEnrollment == 0){
-          System.out.println("--No students enrolled.--");
-        }else{
-          System.out.printf("Enrollment:%d\n",this.currentEnrollment);
-          for(int i=0;i<currentEnrollment;i++){
-            System.out.println(this.roster[i].getName() +"  ("+ this.roster[i].getID() +")");
+          System.out.println("\n    ** No students enrolled **");
+        } else {
+          System.out.printf("Number of students enrolled: %d\n", this.currentEnrollment);
+          for(int i = 0; i < currentEnrollment; i++){
+            System.out.println(roster[i].toString());
           }
         }
+        // Space is added after roster message regardless of enrolled or not
+        System.out.println();
     }
 
     //String method

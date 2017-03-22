@@ -25,7 +25,6 @@ public class Tester {
         // 2. Course Creation w/ Five Student Hold
         Course Physics  = new Course("Physics", 5);
 
-
         // 3. Print Course
         System.out.println(Physics);
 
@@ -46,15 +45,15 @@ public class Tester {
         Physics.printRoster();
 
         // 8. Drop 3rd student
+        Physics.dropStudent(Sam);
 
         // 9. Prints Roster (Again)
         Physics.printRoster();
 
         // 10. Tries to add (Again) and succeed
-        // addStudent()
+        Physics.addStudent(Greg);
 
         // 11. Prints Roster (Again)
         Physics.printRoster();
     }
-
 }
