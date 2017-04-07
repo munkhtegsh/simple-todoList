@@ -1,3 +1,13 @@
+/*------------------------------------------------------------------------
+This is Course Registration programs that allow you to create classes, add or drop students and print out the class roster.
+Description:This program contains four files,a student class,a course class, an alternative course class and the driver.
+Student class is constructed with three parameters name(string), studentID(string) and tuitionPaid(boolean).It comes with setters and getters of each property,and it can be printed out in the form of studentID and student name.
+Course class is constructed with two parameters name(string) and maxEnrollment(int) and one addition property roster that is an array of Student objects. Besides its setters and getters of both property, it also comes with a method to add student into the roster,a method to drop student from the roster, and a method to print out the roster.
+CourseAL is an alternative way to write course class. It replace roster property by ArrayList.
+Written by : Seonghoo Kim, Munkhtegsh Munkhbat, Marc Mares,Yongzheng He
+Date       : Apr 7, 2017
+--------------------------------------------------------------------------*/
+
 /*
         1. creates six students
         2. creates a course that can hold five students

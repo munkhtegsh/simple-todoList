@@ -2,7 +2,7 @@ import java.text.MessageFormat;
 public class Student {
 
     private String name;
-    private String studentID;//iD is not a good idea, since ID has a meaning
+    private String studentID;
     private boolean tuitionPaid;
 
     //constructor

@@ -11,31 +11,18 @@ public class Course {
     private final int minEnrollment;
 
     //constructor
-    public Course (String initialName, int initialMaxEnrollment){
-        this.name = initialName;
+    public Course (String name, int maxEnrollment){
+        this.name = name;
         this.minEnrollment = 1;
-        this.maxEnrollment = initialMaxEnrollment;
+        this.maxEnrollment = maxEnrollment;
         this.currentEnrollment = 0;
-
-        // roster added by Chris. Using maxEnrollment. NOTE: I think MAXCAPACITY might be redundant.
         this.roster = new Student[maxEnrollment];
     }
 
     //getters
     public String getName(){ return this.name; }
     public int getMaxEnrollment(){ return this.maxEnrollment; }
-    // As Mentioned in the description, getter for roster is not required and course has a method below to print roster
-    // public String getRoster() {
-    //     String strRoster = "\n-----------------------------------\n";
-    //     for (Student subscript : roster){
-    //         if (subscript != null) {
-    //             strRoster += subscript.toString() + "\n";
-    //         }
-    //     }
-    //     if (roster[0] == null) strRoster += "    ** No student enrolled **\n";
-    //     strRoster += "-----------------------------------\n";
-    //     return strRoster;
-    // }
+
 
     //setters
     public void setName(String newName) { this.name = newName; }
